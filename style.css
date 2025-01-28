@@ -1,0 +1,165 @@
+/* 全体のスタイル */
+
+html {
+    scroll-behavior: smooth; /* スムーズスクロール */
+}
+
+.anchor {
+    display: block;
+    margin-top: -80px; /* ヘッダーの高さ分スクロール位置を調整 */
+    padding-top: 80px; /* 実際の表示位置を調整 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    font-size: 16px;
+}
+
+/* タイトル */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.5rem; /* PCでは標準サイズ */
+}
+
+/* テーブルデザイン（PC用） */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: fixed;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* 列幅の調整（PC用） */
+th:nth-child(1), td:nth-child(1) {
+    width: 20%;
+}
+th:nth-child(2), td:nth-child(2) {
+    width: 45%;
+}
+th:nth-child(3), td:nth-child(3) {
+    width: 35%;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+/* リンクの色を統一 */
+.left {
+    color: green;
+}
+.right {
+    color: blue;
+}
+
+.left a {
+    color: green;
+    text-decoration: none;
+}
+.left a:hover {
+    text-decoration: underline;
+}
+
+.right a {
+    color: blue;
+    text-decoration: none;
+}
+.right a:hover {
+    text-decoration: underline;
+}
+
+/* Q&Aリンクを中央寄せ */
+.qa-link {
+    text-align: center;
+    margin-top: 10px;
+}
+.qa-link a {
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007BFF;
+    padding: 5px 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+.qa-link a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* リストアイテムの間隔を調整 */
+ul {
+    padding-left: 20px; /* インデントを調整 */
+}
+
+ul li {
+    margin-bottom: 12px; /* 各リストの下に適度な余白を追加 */
+    line-height: 2.0; /* 行間を少し広げる */
+    gap: 10px; /* マーカーとテキストの間隔を調整 */
+}
+li {
+    padding: 10px 0; /* 上下の余白を追加 */
+    border-bottom: 1px solid #ddd; /* 薄いグレーの線 */
+    list-style-position: inside; /* マーカーを内側に */
+    align-items: flex-start; /* テキストを上揃え */
+}
+li p {
+    margin: 0; /* パラグラフの余白を削除 */
+}
+span {
+    font-weight: bold;
+}
+
+/* スマートフォン向けの調整 */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 6px;
+    }
+
+    h1 {
+        font-size: 0.1rem;
+    }
+
+    /* スクロール可能にするためのラップ */
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+
+    th, td {
+        padding: 6px; /* パディングを調整 */
+        font-size: 7px; /* テーブルフォントを調整 */
+        word-wrap: break-word; /* 長い単語を改行 */
+        overflow-wrap: break-word; /* 全体を改行対象 */
+        white-space: normal; /* テキストの改行を有効化 */
+        vertical-align: center;
+    }
+    
+}
