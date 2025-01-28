@@ -134,14 +134,14 @@ span {
 /* スマートフォン向けの調整 */
 @media screen and (max-width: 768px) {
     body {
-        font-size: 6px;
+        font-size: 12px;
     }
 
     h1 {
-        font-size: 0.1rem;
+        font-size: 1.2rem; /* タイトルを適切な大きさに修正 */
     }
 
-    /* スクロール可能にするためのラップ */
+    /* テーブル全体の調整 */
     .table-container {
         overflow-x: auto;
         width: 100%;
@@ -151,15 +151,34 @@ span {
         width: 100%;
         white-space: nowrap;
         margin: 0 auto;
+        table-layout: auto; /* スマホでは自動調整 */
     }
 
     th, td {
         padding: 6px; /* パディングを調整 */
-        font-size: 7px; /* テーブルフォントを調整 */
+        font-size: 10px; /* テーブルフォントを適切なサイズに */
         word-wrap: break-word; /* 長い単語を改行 */
-        overflow-wrap: break-word; /* 全体を改行対象 */
-        white-space: normal; /* テキストの改行を有効化 */
-        vertical-align: center;
+        overflow-wrap: break-word;
+        white-space: normal;
+        vertical-align: middle;
     }
-    
+
+    /* 1列目（左列）のフォントサイズを調整 */
+    th:nth-child(1), td:nth-child(1) {
+        font-size: 10px; /* 小さくする */
+        width: 15%; /* 比率を調整 */
+    }
+
+    /* 2列目・3列目のリストが右寄りになりすぎる問題を修正 */
+    th:nth-child(2), td:nth-child(2),
+    th:nth-child(3), td:nth-child(3) {
+        padding-left: 10px; /* 左側に余白を追加 */
+        text-align: left;
+        width: 42.5%;
+    }
+
+    /* リストのスタイル修正 */
+    ul {
+        padding-left: 10px; /* インデントを少し減らす */
+    }
 }
